@@ -8,19 +8,17 @@
 
 			<!-- Mobile view - Pokemon -->
 			<div class="flex justify-center items-center lg:hidden shadow-xl mx-auto -mt-16 h-64 w-64 bg-white rounded-full">
-				<img class="brightness-0 max-h-48" src="https://img.pokemondb.net/sprites/home/normal/onix.png" alt="Pokemon">
+				<div *ngFor="let pokemon of pokemons" class="">
+					<img *ngIf="pokemon.correctAnswer" class="brightness-0 max-h-48" src="{{'https://img.pokemondb.net/sprites/home/normal/'+ pokemon.name + '.png'}}" alt="Pokemon">
+				</div>
 			</div>
 			
 			<!-- Question and answers -->
 			<h1 class="font-['Silkscreen'] text-3xl uppercase font-bold pt-8 lg:pt-0">Who's that pokemon?</h1>
 			<div class="mx-auto lg:mx-0 w-full pt-3 border-b-2 border-gray-300 mb-5"></div>
-			<div class="mx-auto lg:mx-0 w-full flex flex-col">
-				<button type="button" class="uppercase text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:outline-none focus:bg-blue-800 focus:text-white font-bold rounded-lg text-lg py-2 text-center mr-2 mb-3">Pikachu</button>
-				<button type="button" class="uppercase text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:outline-none focus:bg-blue-800 focus:text-white font-bold rounded-lg text-lg py-2 text-center mr-2 mb-3">Charizard</button>
-				<button type="button" class="uppercase text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:outline-none focus:bg-blue-800 focus:text-white font-bold rounded-lg text-lg py-2 text-center mr-2 mb-3">Bulbasaur</button>
-				<button type="button" class="uppercase text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:outline-none focus:bg-blue-800 focus:text-white font-bold rounded-lg text-lg py-2 text-center mr-2 mb-3">Monkey</button>
+			<div *ngFor="let pokemon of pokemons" class="mx-auto lg:mx-0 w-full flex flex-col">
+				<button *ngIf="pokemon" type="button" class="uppercase text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:outline-none focus:bg-blue-800 focus:text-white font-bold rounded-lg text-lg py-2 text-center mr-2 mb-3">{{ pokemon.name }}</button>
 			</div>
-
 			<!-- Next Pokemon Button -->
 			<div class="mx-auto lg:mx-0 w-full text-center">
 				<button type="button" class="mt-10 text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-4 font-medium rounded-full text-l px-20 py-2.5 mr-2 mb-2">Next Pokemon</button>
@@ -30,7 +28,9 @@
 	
 	<!-- Desktop view - Pokemon -->
 	<div class="w-full lg:w-2/5 bg-white h-3/5 shadow-2xl flex items-center justify-center">
-		<img src="https://img.pokemondb.net/sprites/home/normal/onix.png" alt="Pokemon" class="brightness-0 rounded-none lg:rounded-lg hidden lg:block w-4/5">
+		<div *ngFor="let pokemon of pokemons" class="scale-150 flex justify-center items-center">
+			<img *ngIf="pokemon.correctAnswer" src="{{'https://img.pokemondb.net/sprites/home/normal/' + pokemon.name + '.png'}}" alt="Pokemon" class="brightness-0 rounded-none lg:rounded-lg hidden lg:block w-4/5">
+		</div>
 	</div>
 
 </div>
