@@ -2,47 +2,58 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { map, Observable } from 'rxjs';
 import { Pokemon } from '../interfaces/pokemon.interface';
+import { Response } from '../interfaces/response.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
-
-  private baseUrl: string = "https://pokeapi.co/api/v2/pokemon/";
-  private correct: boolean = false;
+  private apiUrl: string = 'https://pokeapi.co/api/v2/pokemon/?offset=' + this.drawOffset() + '&limit=4';
+  private correctAnswerExist: boolean = false;
   private counter: number = 0;
 
   constructor(private http: HttpClient) {}
 
-  public getPokemon(): Observable<Pokemon> {
-    return this.http.get<Pokemon>(this.baseUrl + this.drawPokemonId().toString()).pipe(
-      map(res => this.processPokemon(res)));
+  public fetchPokemons(): Observable<any> {
+    this.resetState();
+    return this.http.get<any>(this.apiUrl).pipe(
+      map(resource => this.processResponse(resource)));
   }
 
-  private processPokemon(pokemon: Pokemon) {
+  private processResponse(response: Response) {
     return {
-      id: pokemon.id,
-      name: pokemon.name,
-      correctAnswer: this.chooseCorrectAnswer()
+      count: response.count,
+      next: response.next,
+      previous: response.previous,
+      results: response.results.map((pokemon: any) => (<Pokemon> {
+        name: pokemon.name,
+        correctAnswer: this.chooseCorrectAnswer(),
+        status: false
+      }))
     }
   }
 
   private chooseCorrectAnswer(): boolean {
     this.counter++;
-    if(this.correct === true) {
+    if(this.correctAnswerExist === true) {
       return false;
     }
-    if(this.correct === false && this.counter >= 4) {
+    if(this.correctAnswerExist === false && this.counter >= 4) {
       return true;
     }
     if(Math.random() > 0.5) {
-      this.correct = true;
+      this.correctAnswerExist = true;
       return true;
     }
     return false;
   }
 
-  private drawPokemonId(): number {
-    return Math.round(Math.random() * 800);
+  private drawOffset(): number {
+    return Math.round(Math.random() * 500);
+  }
+
+  private resetState(): void {
+    this.correctAnswerExist = false;
+    this.counter = 0;
   }
 }

@@ -1,5 +1,5 @@
 export interface Pokemon {
-    id: number,
     name: string,
-    correctAnswer: boolean
+    correctAnswer: boolean,
+    status: boolean
 }
