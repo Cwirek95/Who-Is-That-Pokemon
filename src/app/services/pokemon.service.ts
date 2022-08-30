@@ -8,7 +8,7 @@ import { Response } from '../interfaces/response.interface';
   providedIn: 'root'
 })
 export class PokemonService {
-  private apiUrl: string = 'https://pokeapi.co/api/v2/pokemon/?offset=' + this.drawOffset() + '&limit=4';
+  private apiUrl: string = 'https://pokeapi.co/api/v2/pokemon/?offset=';
   private correctAnswerExist: boolean = false;
   private counter: number = 0;
 
@@ -16,8 +16,9 @@ export class PokemonService {
 
   public fetchPokemons(): Observable<any> {
     this.resetState();
-    return this.http.get<any>(this.apiUrl).pipe(
-      map(resource => this.processResponse(resource)));
+    this.drawOffset().toString()
+    return this.http.get<any>(this.apiUrl + this.drawOffset().toString() + '&limit=4')
+      .pipe(map(resource => this.processResponse(resource)));
   }
 
   private processResponse(response: Response) {

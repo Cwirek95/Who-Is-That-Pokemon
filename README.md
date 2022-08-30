@@ -1,27 +1,94 @@
-# WhoIsThatPokemon
+# Who Is That Pokemon
+ 
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwind%20css-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+<br />
 
-## Development server
+<img src="https://purepng.com/public/uploads/large/purepng.com-pokemonpokemonpocket-monsterspokemon-franchisefictional-speciesone-pokemonmany-pokemonone-pikachu-1701527784845bdjl3.png" width="128px">
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<br />
 
-## Code scaffolding
+"Who is that pokemon" is a question-and-answer game which you have to guess what kind of Pokemon it is based on its shape. Test your knowledge with my guess the Pokémon quiz!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<br>
 
-## Build
+---
+## Table of Contents
+* [Live Demo](#live-demo)
+* [Screenshots](#screenshots)
+* [Technology Stack](#technology-stack)
+* [Usage](#usage)
+* [Contact](#contact)
+* [License](#license)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<br>
 
-## Running unit tests
+---
+## Live Demo
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<br>
 
-## Running end-to-end tests
+[![Live Demo](https://img.shields.io/badge/Live_Demo-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://andrzejcwiertniak.com/pokemon/)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<br>
 
-## Further help
+---
+## Screenshots
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<br>
+
+<div style="text-align: center;"> 
+
+![WhoIsThatPokemon](/pokemon-desktop.png?raw=true "Who Is That Pokemon")
+
+<br>
+
+![WhoIsThatPokemon](/pokemon-mobile.png?raw=true "Who Is That Pokemon")
+![WhoIsThatPokemon](/pokemon-mobile2.png?raw=true "Who Is That Pokemon")
+
+</div>
+
+<br>
+
+---
+## Technology Stack
+
+- Angular
+- TypeScript
+- HTML
+- Tailwind CSS
+- Responsive Web Design
+- Git
+
+<br>
+
+---
+## Usage
+
+After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
+Once the dependencies are installed, you can to start the application.
+
+<br>
+
+---
+## Contact
+
+Created by [@Cwirek95](https://github.com/Cwirek95) - feel free to contact me! <br>
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=firefox&logoColor=#FF7139&link=linkedin.com/in/andrzej-ćwiertniak-155221238)](https://andrzejcwiertniak.com/)
+
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrzej-cwiertniak/)
+
+[![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&link=mailto:acwiertniak95@gmail.com)](mailto:acwiertniak95@gmail.com)
+
+<br>
+
+---
+## License
+
+This project is licensed under the terms of the **MIT** license.

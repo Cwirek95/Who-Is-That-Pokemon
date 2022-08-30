@@ -10,7 +10,7 @@
 			<div class="flex justify-center items-center lg:hidden shadow-xl mx-auto -mt-16 h-64 w-64 bg-white rounded-full">
 				<div *ngFor="let pokemon of response?.results" class="flex justify-center items-center">
 					<img *ngIf="pokemon.correctAnswer" 
-					[ngClass]="[answerClicked ? 'brightness-[1] scale-[1.10] duration-1000' : '',
+					[ngClass]="[answerClicked ? 'brightness-[1.0] scale-[1.10] duration-1000' : '',
 					nextPokemonClicked ? 'hidden' : 'block']"  
 					class="brightness-0 max-h-48" src="{{'https://img.pokemondb.net/sprites/home/normal/'+ pokemon.name + '.png'}}" alt="Pokemon">
 				</div>
@@ -52,7 +52,7 @@
 	<div class="w-full lg:w-2/5 bg-white h-3/5 shadow-2xl flex items-center justify-center">
 		<div *ngFor="let pokemon of response?.results" class="scale-[1.5] flex justify-center items-center">
 			<img *ngIf="pokemon.correctAnswer" 
-			[ngClass]="[answerClicked ? 'brightness-[1] scale-[1.15] duration-1000' : '',
+			[ngClass]="[answerClicked ? 'brightness-[1.0] scale-[1.15] duration-1000' : '',
 				nextPokemonClicked ? 'lg:hidden' : 'lg:block']" 
 			src="{{'https://img.pokemondb.net/sprites/home/normal/'+ pokemon.name + '.png'}}" alt="Pokemon" class="brightness-0 rounded-none lg:rounded-lg hidden w-4/5">
 		</div>
